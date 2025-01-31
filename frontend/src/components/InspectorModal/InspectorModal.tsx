@@ -93,6 +93,7 @@ const InspectorModal: React.FC<Properties> = ({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, field: string) => {
+    if(e.target.value.length > 50) return;
     onInspectorDataChange((prevData) => ({ ...prevData, [field]: e.target.value }));
   };
 
